@@ -187,7 +187,18 @@ def s1(s, sl):
     txt(s, MX, yy, lw, 0.3, [[('THE PROBLEM', 10, RED, True, False)]]); yy += 0.3
     txt(s, MX, yy, lw, 1.2, [[(sl['problem'], 12, INK, False, False)]], line=1.14); yy += 1.35
     txt(s, MX, yy, lw, 0.3, [[('THE SOLUTION — SWIGGY SARAL', 10, GREEN, True, False)]]); yy += 0.3
-    txt(s, MX, yy, lw, 1.1, [[(sl['solution'], 12, INK, False, False)]], line=1.14)
+    txt(s, MX, yy, lw, 0.8, [[(sl['solution'], 12, INK, False, False)]], line=1.14); yy += 0.78
+    # five pillar chips
+    chips=['1 Unbundled buckets','2 Just-in-time notices','3 Multilingual','4 Consent Ledger','5 Kids gateway']
+    cw2=(lw-0.4)/2
+    for i,ch2 in enumerate(chips):
+        r=i//2; c=i%2
+        cxx=MX+c*(cw2+0.2); cyy=yy+r*0.44
+        if i==4: cxx=MX; wdt=lw
+        else: wdt=cw2
+        rect(s, cxx, cyy, wdt, 0.36, fill=SURFACE, line=HAIR, lw=1.0, rounded=True, radius=0.12)
+        rect(s, cxx, cyy+0.06, 0.05, 0.24, fill=GREEN if i==4 else PRIM)
+        txt(s, cxx+0.16, cyy+0.03, wdt-0.24, 0.3, [[(ch2, 10, INK, True, False)]], anchor=MSO_ANCHOR.MIDDLE)
     # decision ask ribbon
     ry = SH-1.15
     rect(s, MX, ry, lw, 0.62, fill=C('FFF4EA'), line=PRIM, lw=1.2, rounded=True, radius=0.08)
@@ -436,12 +447,13 @@ def s9(s, sl):
     hm=sl['heatmap']; cy=y+0.36
     cols=['RED_BG','FCE9DE','FEF3C7','SURFACE']
     accs=[RED, PRIM, C('B45309'), MUTED]
-    ch=(SH-cy-0.55)/4
+    gp=0.1
+    ch=(SH-cy-0.55-3*gp)/4
     for i,q in enumerate(hm):
         fill=[RED_BG, C('FCE9DE'), C('FEF3C7'), SURFACE][i]
-        rect(s, hx, cy+i*(ch+0.1), hw, ch, fill=fill, line=accs[i], lw=1.0, rounded=True, radius=0.06)
-        txt(s, hx+0.14, cy+i*(ch+0.1)+0.08, hw-0.26, 0.3, [[(q['q'], 9.3, accs[i], True, False)]])
-        txt(s, hx+0.14, cy+i*(ch+0.1)+0.34, hw-0.26, ch-0.4, [[(q['items'], 9.3, INK, False, False)]], line=1.05)
+        rect(s, hx, cy+i*(ch+gp), hw, ch, fill=fill, line=accs[i], lw=1.0, rounded=True, radius=0.06)
+        txt(s, hx+0.14, cy+i*(ch+gp)+0.08, hw-0.26, 0.3, [[(q['q'], 9.3, accs[i], True, False)]])
+        txt(s, hx+0.14, cy+i*(ch+gp)+0.32, hw-0.26, ch-0.4, [[(q['items'], 9.3, INK, False, False)]], line=1.05)
     footer(s, sl, sl['n']); notes(s, sl)
 
 def s10(s, sl):
