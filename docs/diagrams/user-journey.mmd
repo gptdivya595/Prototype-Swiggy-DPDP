@@ -1,0 +1,30 @@
+flowchart TB
+  subgraph CURRENT["CURRENT ONBOARDING — bundled consent"]
+    direction LR
+    A["1 · App launch<br/>No notice<br/><i>Hungry, hurried</i>"] --> B["2 · Phone + OTP<br/>No separate consent<br/><i>Focused on food</i>"]
+    B --> C["3 · OS location ask<br/>No Swiggy reason<br/><i>Confused</i>"]
+    C --> D{"4 · Bundled wall<br/>Accept all to continue?"}
+    D -- "Only way forward" --> E["Blind-accept<br/>4,000-word policy, English-only<br/><i>Fatigued</i>"]
+    E --> F["5 · Home screen<br/>Background location + ads + partner sharing begin<br/><i>Unaware</i>"]
+    F -. "later surprise → distrust" .-> G
+  end
+
+  subgraph SARAL["SWIGGY SARAL — progressive consent"]
+    direction LR
+    H["Essential inline notice<br/>Phone · address · payment"] --> I["Proceed to food<br/>Zero optional asks"]
+    I --> J["JIT micro-notice<br/>at moment of need"]
+    J --> K["Affirmative toggle<br/>+ value exchange (₹50 off)"]
+    K --> L["Privacy Center<br/>1-tap revoke · vernacular"]
+  end
+
+  D -. "intervene: unbundle before authorizing" .-> H
+  L -. "consent event" .-> G["Consent Ledger<br/>Valid, granular, auditable"]
+
+  classDef current fill:#F4F4F5,stroke:#71717A,color:#18181B,stroke-width:2px;
+  classDef pain fill:#FCE4DE,stroke:#E4572E,color:#4A1206,stroke-width:3px;
+  classDef saral fill:#FCE9DE,stroke:#FC8019,color:#3A1E08,stroke-width:3px;
+  classDef outcome fill:#E3F5EC,stroke:#1BA672,color:#123524,stroke-width:3px;
+  class A,B,C,F current;
+  class D,E pain;
+  class H,I,J,K,L saral;
+  class G outcome;

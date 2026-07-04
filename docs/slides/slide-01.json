@@ -1,0 +1,30 @@
+{
+  "n": 1,
+  "layout": "title-evidence",
+  "kicker": "SWIGGY · DPDP ACT 2023 · PRODUCT CASE",
+  "title": "Swiggy asks for all your data with one tap. DPDP says that consent is invalid.",
+  "subtitle": "Focus: the onboarding consent experience — the first legal touchpoint where personal-data collection is authorized.",
+  "problem": "Swiggy's onboarding bundles essential delivery data (phone, address) with optional behavioural data (location, marketing, analytics) behind a single 'Accept All'. DPDP Act, Section 6 requires consent that is free, specific, informed, unconditional and affirmative — bundling is none of these.",
+  "solution": "Swiggy SARAL: unbundled consent buckets, just-in-time micro-notices, a multilingual plain-language layer, an immutable Consent Ledger, and a children's-data gateway.",
+  "evidence_ledger": [
+    {
+      "label": "Monthly active users",
+      "value": "~24M+"
+    },
+    {
+      "label": "Max DPDP penalty",
+      "value": "₹250 cr"
+    },
+    {
+      "label": "Value data transparency",
+      "value": "~68% of digital natives"
+    },
+    {
+      "label": "Children's-data gate today",
+      "value": "None (S.9 gap)"
+    }
+  ],
+  "decision_ask": "Approve resourcing + Phase-1 A/B launch to make consent valid without breaking onboarding.",
+  "footer": "PM — Data & Privacy · 04 July 2026",
+  "notes": "Open with the regulatory countdown. This is a product-architecture problem, not a legal checkbox. Bundled consent is a ticking time bomb for both trust and law."
+}

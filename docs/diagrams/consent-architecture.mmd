@@ -1,0 +1,27 @@
+flowchart TB
+  U["User at onboarding"] --> AGE{"Age gate<br/>Under 18?"}
+
+  AGE -- "Yes" --> GC["Pillar 5 · Guardian Consent Mode<br/>Parent OTP + verifiable link<br/>Data-minimal child account"]
+  AGE -- "No" --> P1
+
+  subgraph SARAL["SWIGGY SARAL"]
+    P1["Pillar 1 · Unbundled buckets<br/>Essential (inline) vs Optional (toggles)"]
+    P2["Pillar 2 · Just-in-time micro-notices<br/>Ask at moment of need + value exchange"]
+    P3["Pillar 3 · Multilingual plain-language<br/>12 languages · 8th-grade · icons"]
+    P1 --> P2 --> P3
+  end
+
+  P3 --> CM["Pillar 4 · Consent Manager microservice"]
+  GC --> CM
+  CM --> K["Kafka event stream"]
+  K --> LED["Consent Ledger<br/>Immutable · signed · WORM"]
+  LED --> API["Audit API<br/>DPB-ready in <2 min"]
+
+  classDef user fill:#E5EEFB,stroke:#2563EB,color:#0F1E3D,stroke-width:2px;
+  classDef gate fill:#FCE4DE,stroke:#E4572E,color:#4A1206,stroke-width:3px;
+  classDef pillar fill:#FCE9DE,stroke:#FC8019,color:#3A1E08,stroke-width:2px;
+  classDef back fill:#E3F5EC,stroke:#1BA672,color:#123524,stroke-width:2px;
+  class U user;
+  class AGE gate;
+  class P1,P2,P3,GC pillar;
+  class CM,K,LED,API back;

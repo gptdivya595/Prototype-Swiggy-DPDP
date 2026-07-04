@@ -1,0 +1,25 @@
+{
+  "n": 6,
+  "layout": "diagnostic",
+  "kicker": "DIAGNOSTIC THINKING",
+  "title": "If VCCR drops 15% with no release — a forensic, not a panic",
+  "subtitle": "Scenario: 3 weeks post-launch VCCR falls 92% → 77%. No release, campaign, or outage.",
+  "diagram": "hypothesis-tree.png",
+  "diagram_alt": "Four-branch hypothesis tree: UX regression, cohort shift, backend data drift, external trigger.",
+  "analysis_plan": [
+    "Segment drop by platform / app version / OS → isolate iOS-only vs version bug",
+    "Funnel drop-off by consent category → marketing-only (JIT) vs uniform (cohort/external)",
+    "Ledger event volume vs app analytics volume → backend data loss",
+    "Correlate with acquisition source / campaign ID → cohort shift",
+    "Social listening 'Swiggy + privacy' → external trigger",
+    "Session recordings at consent screens → rage-click / UX confusion"
+  ],
+  "root_cause": "Five-Whys + cohort isolation. Example: opt-in fell → JIT fires at checkout → address event mis-mapped to checkout in v8.4.2 → release regression in trigger logic.",
+  "next_steps": [
+    "0-24h: freeze rollout if <80%, verify pipeline, alert legal",
+    "1-7d: A/B JIT timing, hotfix regression, in-app survey",
+    "7-30d: re-engage incomplete consent, fix micro-copy, transparency post"
+  ],
+  "footer": "Hypothesis tree + recovery playbook",
+  "notes": "The hypothesis tree prevents panic; the analysis plan is a forensic checklist. Key: is it a UX bug, a backend leak, or a market shift?"
+}

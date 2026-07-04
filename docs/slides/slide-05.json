@@ -1,0 +1,49 @@
+{
+  "n": 5,
+  "layout": "metrics",
+  "kicker": "METRICS & SUCCESS CRITERIA",
+  "title": "One North Star that fuses compliance, conversion and trust",
+  "subtitle": "Valid Consent Coverage Rate — high VCCR means legally protected AND users aren't bouncing.",
+  "diagram": "kpi-tree.png",
+  "diagram_alt": "VCCR North Star broken into Valid, Granular, Reach, Trust drivers with guardrails and lagging outcome.",
+  "north_star": {
+    "name": "Valid Consent Coverage Rate (VCCR)",
+    "def": "% of MAU with explicit, granular, unbundled, ledger-verified consent for every active processing purpose.",
+    "target": "≥95% within 90 days"
+  },
+  "supporting": [
+    {
+      "m": "Day-1 onboarding completion",
+      "b": "72%",
+      "t": "≥70% (≤2.8pp drop)"
+    },
+    {
+      "m": "Marketing opt-in (post-JIT)",
+      "b": "100% bundled",
+      "t": "≥45% in 60 days"
+    },
+    {
+      "m": "Consent revocation completion",
+      "b": "n/a (email only)",
+      "t": "≥90% · median <45s"
+    }
+  ],
+  "guardrails": [
+    {
+      "m": "Privacy support tickets",
+      "t": "≤1.5× baseline"
+    },
+    {
+      "m": "Ledger sync latency (p99)",
+      "t": "<500ms"
+    }
+  ],
+  "success": [
+    "Compliance: zero audit findings; passes DPB mock audit",
+    "Trust: Privacy NPS +10 pts",
+    "Business: onboarding within 3pp; opt-in >40%",
+    "Ops: 100% real-time ledger sync, zero data loss / 30d"
+  ],
+  "footer": "KPI framework",
+  "notes": "VCCR is the only metric combining legal safety with engagement. High VCCR but onboarding drops → tighten JIT timing. Low VCCR but onboarding fine → compliance leak."
+}

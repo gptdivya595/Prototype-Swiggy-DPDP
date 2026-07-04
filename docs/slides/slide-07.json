@@ -1,0 +1,86 @@
+{
+  "n": 7,
+  "layout": "dashboard",
+  "kicker": "DASHBOARD",
+  "title": "Consent Health Command Center",
+  "subtitle": "Real-time monitoring of compliance, conversion and trust (mock data, 30-sec rollup).",
+  "main_kpi": {
+    "metric": "VCCR",
+    "value": "77.0%",
+    "target": "95.0%",
+    "trend": "↓ 15.0pp vs 3 weeks ago",
+    "status": "Below target"
+  },
+  "tiles": [
+    {
+      "m": "Day-1 onboarding",
+      "v": "55.0%",
+      "sub": "baseline 72% · ↓17pp",
+      "status": "critical"
+    },
+    {
+      "m": "Marketing opt-in (JIT)",
+      "v": "53.0%",
+      "sub": "target 45% · ↑8pp",
+      "status": "healthy"
+    },
+    {
+      "m": "Ledger sync p99",
+      "v": "320ms",
+      "sub": "threshold 500ms",
+      "status": "healthy"
+    },
+    {
+      "m": "Privacy tickets / wk",
+      "v": "1,240",
+      "sub": "baseline 800 · ↑55%",
+      "status": "critical"
+    }
+  ],
+  "sparkline_ref": "VCCR 30-day series in root JSON (slide 7)",
+  "segmentation": [
+    {
+      "seg": "iOS / Metro / New (Jun)",
+      "vccr": "68%",
+      "onb": "48%",
+      "opt": "58%",
+      "note": "Highest drop; iOS 18 ATT suspected"
+    },
+    {
+      "seg": "Android / Metro / New",
+      "vccr": "82%",
+      "onb": "62%",
+      "opt": "52%",
+      "note": "Within guardrail"
+    },
+    {
+      "seg": "Android / Tier-2 / All",
+      "vccr": "79%",
+      "onb": "58%",
+      "opt": "44%",
+      "note": "Vernacular copy tests needed"
+    },
+    {
+      "seg": "iOS / Tier-1 / Returning",
+      "vccr": "94%",
+      "onb": "n/a",
+      "opt": "61%",
+      "note": "Re-consent successful"
+    },
+    {
+      "seg": "Guardian / Under-18",
+      "vccr": "45%",
+      "onb": "35%",
+      "opt": "12%",
+      "note": "Parental OTP friction high"
+    }
+  ],
+  "alerts": [
+    "VCCR <80% >2h → P0 auto-freeze + page SRE + notify Legal",
+    "Onboarding <60% >6h → P1 fallback simplified flow",
+    "Ledger p99 >500ms >10m → P1 Kafka lag",
+    "Privacy tickets >1.5× 3d → P2 copy review"
+  ],
+  "footer": "Health dashboard · mock data",
+  "notes": "This dashboard is the war room. Segmentation isolates patient-zero. Under-18 is the biggest blind spot."
+}

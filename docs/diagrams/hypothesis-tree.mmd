@@ -1,0 +1,30 @@
+flowchart LR
+  ROOT["VCCR drops 15%<br/>(92% → 77%)<br/>No release · no campaign · no outage"]
+
+  ROOT --> B1["A · UX regression<br/>JIT prompt at high-friction moment"]
+  ROOT --> B2["B · Cohort shift<br/>New users, different privacy attitude"]
+  ROOT --> B3["C · Backend data drift<br/>Ledger not recording actions"]
+  ROOT --> B4["D · External trigger<br/>Privacy sensitivity spike"]
+
+  B1 --> B1a["Location JIT fires at checkout, not address"]
+  B1 --> B1b["Marketing copy reads as dark pattern"]
+  B1 --> B1c["Toggle broken on a device/OS combo"]
+
+  B2 --> B2a["Student campaign → under-18 hit guardian wall"]
+  B2 --> B2b["Tier-3 expansion → vernacular copy struggles"]
+  B2 --> B2c["iOS 18 ATT change alters consent signal"]
+
+  B3 --> B3a["Kafka lag >5min on a network/region"]
+  B3 --> B3b["Artifact hash collision → dedup suppression"]
+  B3 --> B3c["App v8.4.2 not emitting optional-toggle events"]
+
+  B4 --> B4a["Viral article on food-app data sharing"]
+  B4 --> B4b["Competitor 'privacy-first' campaign"]
+  B4 --> B4c["Govt DPDP awareness ads"]
+
+  classDef root fill:#FCE4DE,stroke:#E4572E,color:#4A1206,stroke-width:3px;
+  classDef br fill:#FCE9DE,stroke:#FC8019,color:#3A1E08,stroke-width:2px;
+  classDef leaf fill:#F4F4F5,stroke:#71717A,color:#18181B,stroke-width:1px;
+  class ROOT root;
+  class B1,B2,B3,B4 br;
+  class B1a,B1b,B1c,B2a,B2b,B2c,B3a,B3b,B3c,B4a,B4b,B4c leaf;

@@ -1,0 +1,54 @@
+{
+  "n": 3,
+  "layout": "journey-gaps",
+  "kicker": "CURRENT EXPERIENCE",
+  "title": "The 'wall of text' onboarding breaks the law before the first order",
+  "subtitle": "How Swiggy collects data today (stated assumptions) and where it fails DPDP.",
+  "diagram": "user-journey.png",
+  "diagram_alt": "Current bundled onboarding loop vs the SARAL progressive-consent intervention.",
+  "gaps": [
+    {
+      "p": "Free & unconditional (S.6)",
+      "s": "Can't proceed without accepting all",
+      "sev": "Critical"
+    },
+    {
+      "p": "Specific & informed (S.6)",
+      "s": "One statement covers 12+ activities",
+      "sev": "Critical"
+    },
+    {
+      "p": "Children's data (S.9)",
+      "s": "No age gate, no parental flow",
+      "sev": "Critical"
+    },
+    {
+      "p": "Affirmative action (S.6)",
+      "s": "Pre-ticked marketing box",
+      "sev": "High"
+    },
+    {
+      "p": "Purpose limitation (S.5)",
+      "s": "OTP phone reused for marketing",
+      "sev": "High"
+    },
+    {
+      "p": "Right to withdraw (S.7)",
+      "s": "Email-only, no in-app control",
+      "sev": "High"
+    },
+    {
+      "p": "Data minimisation (S.4)",
+      "s": "24/7 background location",
+      "sev": "Medium"
+    }
+  ],
+  "risks": [
+    "Legal: DPB show-cause on enforcement",
+    "Conversion: ~18% drop at Terms wall (Tier-2/3)",
+    "Trust: privacy = #2 complaint (Swiggy One)",
+    "Competitive: Zomato piloting granular toggles"
+  ],
+  "footer": "Current state → gap analysis",
+  "notes": "Pause at the bundled wall — that's where we lose users and break the law. Background location starts before any order."
+}

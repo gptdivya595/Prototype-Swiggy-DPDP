@@ -1,0 +1,51 @@
+{
+  "n": 4,
+  "layout": "solution",
+  "kicker": "PROPOSED SOLUTION",
+  "title": "Swiggy SARAL — consent as a product feature, not a legal tax",
+  "subtitle": "Simple · Accessible · Rational · Actionable · Legal. From all-or-nothing to just-in-time, just-enough, just-for-now.",
+  "diagram": "consent-architecture.png",
+  "diagram_alt": "Age gate → unbundled buckets → JIT notices → multilingual layer → Consent Manager → Kafka → immutable Ledger → Audit API.",
+  "pillars": [
+    {
+      "h": "1 · Unbundled buckets",
+      "d": "Essential (inline, no opt-out) vs Optional (granular, un-ticked toggles)."
+    },
+    {
+      "h": "2 · Just-in-time notices",
+      "d": "Ask at the moment of need + value exchange (₹50 off for WhatsApp alerts)."
+    },
+    {
+      "h": "3 · Multilingual plain-language",
+      "d": "12 languages, 8th-grade reading level, icon per data category."
+    },
+    {
+      "h": "4 · Consent Ledger",
+      "d": "Immutable signed log; DPB-auditable in <2 min. Kafka → WORM → Audit API."
+    },
+    {
+      "h": "5 · Children's gateway",
+      "d": "Age gate → Guardian Consent Mode; child account runs data-minimal."
+    }
+  ],
+  "alternatives": [
+    {
+      "a": "Single-page granular checklist at signup",
+      "r": "~18% drop-off; violates low-patience context"
+    },
+    {
+      "a": "Post-first-order consent prompt",
+      "r": "Loses new-user personalization window"
+    },
+    {
+      "a": "OS permissions only",
+      "r": "Fails DPDP purpose-specific notice"
+    },
+    {
+      "a": "Third-party consent plug-in",
+      "r": "Vendor lock-in; weak vernacular UX"
+    }
+  ],
+  "footer": "Solution architecture",
+  "notes": "SARAL re-architects how Swiggy treats user autonomy. Ledger = insurance. JIT = conversion strategy. Children's gateway = legal shield."
+}

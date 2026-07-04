@@ -1,0 +1,71 @@
+{
+  "n": 9,
+  "layout": "risks",
+  "kicker": "RISKS & TRADE-OFFS",
+  "title": "Honest accounting of what we trade for compliance",
+  "subtitle": "We know conversion will hurt and legacy data is messy — the cost of inaction is existential.",
+  "risks": [
+    {
+      "c": "Engineering complexity",
+      "i": "High",
+      "p": "Certain",
+      "t": "Accept 3-wk backend extension vs lifetime liability",
+      "m": "Managed Kafka + WORM S3; 2 senior eng / 8 wks; in-memory fallback"
+    },
+    {
+      "c": "Business (conversion)",
+      "i": "High",
+      "p": "Likely",
+      "t": "6 mo lower ad revenue for defensible model",
+      "m": "JIT incentives; first-party personalization; re-engage opt-ins"
+    },
+    {
+      "c": "User friction (Tier-2/3)",
+      "i": "Medium",
+      "p": "Likely",
+      "t": "Small top-funnel loss for trust + retention",
+      "m": "Progressive disclosure; <30s consent; Quick-Start auto-deny"
+    },
+    {
+      "c": "Edge: declines all optional",
+      "i": "Medium",
+      "p": "Certain (some %)",
+      "t": "Higher eng cost for privacy mode",
+      "m": "Minimal mode: manual address, no marketing, aggregated analytics, blocked sharing"
+    },
+    {
+      "c": "Edge: non-cooperative guardian",
+      "i": "Low",
+      "p": "Possible",
+      "t": "Lose some under-18 volume vs S.9 penalty",
+      "m": "Limited-access order, zero retention, parent education"
+    },
+    {
+      "c": "Edge: legacy data backfill",
+      "i": "High",
+      "p": "Certain",
+      "t": "Temp. data-richness loss to cleanse liability",
+      "m": "'Trust Refresh' re-consent; purge >12mo profiles; document legitimate use"
+    }
+  ],
+  "heatmap": [
+    {
+      "q": "High prob · High impact",
+      "items": "Conversion loss · Legacy backfill"
+    },
+    {
+      "q": "High prob · Med impact",
+      "items": "Eng complexity · Tier-2/3 friction"
+    },
+    {
+      "q": "Med prob · Med impact",
+      "items": "Guardian refusal"
+    },
+    {
+      "q": "Low prob · Low impact",
+      "items": "Competitor first-mover"
+    }
+  ],
+  "footer": "Risk matrix",
+  "notes": "This is where we prove we're not naive. Conversion will hurt, engineering is hard, legacy is a mess — trade-offs are worth it because the alternative is regulatory shutdown of data ops."
+}

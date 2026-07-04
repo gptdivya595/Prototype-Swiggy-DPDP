@@ -1,0 +1,27 @@
+flowchart TD
+    NS["North Star<br/>Valid Consent Coverage Rate (VCCR)<br/>% MAU with explicit, granular,<br/>ledger-verified consent"]
+    NS --> V["Valid"]
+    NS --> G["Granular"]
+    NS --> R["Reach"]
+    NS --> T["Trust"]
+
+    V --> V1["Ledger artifact per purpose"]
+    V --> V2["Affirmative, un-ticked opt-in"]
+    G --> G1["Per-purpose consent captured"]
+    G --> G2["Essential vs optional split"]
+    R --> R1["Day-1 onboarding completion ≥70%"]
+    R --> R2["Marketing opt-in (JIT) ≥45%"]
+    T --> T1["Revocation completion ≥90% · <45s"]
+    T --> T2["Privacy NPS +10 pts"]
+
+    GR["Guardrails<br/>Privacy support tickets ≤1.5x · Ledger p99 <500ms · Onboarding drop ≤2.8pp"]
+    GR -. constrain .-> NS
+    LG["Lagging outcome<br/>Zero audit findings · DPB mock-audit clean"]
+    LG -. validates .-> NS
+
+    classDef north fill:#E3F5EC,stroke:#1BA672,color:#123524,stroke-width:3px;
+    classDef driver fill:#E5EEFB,stroke:#2563EB,color:#0F1E3D,stroke-width:2px;
+    classDef guard fill:#FCE9DE,stroke:#FC8019,color:#3A1E08,stroke-width:2px;
+    class NS north;
+    class V,G,R,T,V1,V2,G1,G2,R1,R2,T1,T2 driver;
+    class GR,LG guard;

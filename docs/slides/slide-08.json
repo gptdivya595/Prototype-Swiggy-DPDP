@@ -1,0 +1,31 @@
+{
+  "n": 8,
+  "layout": "rollout",
+  "kicker": "ROLLOUT PLAN",
+  "title": "Phased, validated, reversible — and we never A/B-test illegality",
+  "subtitle": "From legal foundation to full rollout with hard gates at each phase.",
+  "diagram": "rollout-timeline.png",
+  "diagram_alt": "Four phases over 14 weeks with go/no-go gates leading to compliant, audit-ready state.",
+  "ab": {
+    "testable": [
+      "JIT prompt timing",
+      "Toggle UI pattern",
+      "Incentive framing",
+      "Vernacular variants (formal vs colloquial)"
+    ],
+    "non_testable": [
+      "Essential-data notice (legally mandated)",
+      "Children's age gate",
+      "Consent Ledger logging"
+    ],
+    "handling": "For mandatory elements run 'compliance shadow tests': new notice to 100% of a cohort vs a holdback that sees the OLD compliant notice — never a non-compliant one."
+  },
+  "validation": [
+    "Quant: funnel, cohort retention, VCCR trend",
+    "Qual: moderated tests in Hindi/Tamil/Kannada",
+    "Legal: external DPDP mock audit every 2 weeks",
+    "Tech: chaos test Ledger (Kafka outage → fallback queue)"
+  ],
+  "footer": "Timeline + experimentation",
+  "notes": "Phase 1 is make-or-break. We test HOW to make compliance delightful, never WHETHER compliance is needed. The non-testable list is our red line."
+}

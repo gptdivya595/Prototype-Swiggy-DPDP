@@ -1,0 +1,52 @@
+{
+  "n": 10,
+  "layout": "cta",
+  "kicker": "CONCLUSION",
+  "title": "Privacy as a product, not a penalty",
+  "subtitle": "SARAL turns DPDP compliance into a competitive advantage — legal safety, business growth, user trust, at once.",
+  "pillars": [
+    {
+      "h": "Legal safety",
+      "d": "Zero bundled consent · verifiable ledger · parental gateway · audit-ready <2 min"
+    },
+    {
+      "h": "Business growth",
+      "d": "Core onboarding unblocked · opt-in recovered via JIT · premium trust positioning"
+    },
+    {
+      "h": "User trust",
+      "d": "Plain-language multilingual notices · one-tap revocation · transparent usage"
+    }
+  ],
+  "decision_ask": "Approve today: (1) 2 senior backend eng + 1 designer + 1 legal PM for 12 weeks; (2) ₹45 lakh for translation, audit & managed infra; (3) Go for Phase-1 A/B on 20 July 2026.",
+  "next_steps": [
+    {
+      "o": "Product",
+      "a": "PRD for Consent Ledger + JIT trigger logic",
+      "d": "10 Jul"
+    },
+    {
+      "o": "Engineering",
+      "a": "Staging for SARAL backend + variants",
+      "d": "17 Jul"
+    },
+    {
+      "o": "Legal",
+      "a": "Complete DPIA → DPO sign-off",
+      "d": "15 Jul"
+    },
+    {
+      "o": "Design",
+      "a": "Hi-fi prototypes + vernacular copy",
+      "d": "12 Jul"
+    },
+    {
+      "o": "Growth",
+      "a": "Incentive framework for JIT opt-in",
+      "d": "14 Jul"
+    }
+  ],
+  "closing": "DPDP isn't a deadline to fear — it's a blueprint for the most trusted food-tech platform in India. Our users' data belongs to them; their trust belongs to us.",
+  "footer": "Call to action",
+  "notes": "End with energy. The ask is specific: people, money, a date. Privacy is not a cost center — it is the product."
+}

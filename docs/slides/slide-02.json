@@ -1,0 +1,43 @@
+{
+  "n": 2,
+  "layout": "personas",
+  "kicker": "THE USER",
+  "title": "Three people, one broken consent moment",
+  "subtitle": "The person whose data is at stake — and why the current flow fails each of them.",
+  "personas": [
+    {
+      "name": "Priya, 28 · Bangalore",
+      "tag": "Privacy-conscious urban diner",
+      "context": "Lunch 3×/week; Instamart on weekends.",
+      "model": "Gets that Swiggy needs address + phone. Doesn't get why it tracks location when closed, or sends Dineout emails after biryani.",
+      "attitude": "Shares for clear value; hates dark patterns.",
+      "risk": "Churns to Zomato."
+    },
+    {
+      "name": "Ramesh, 42 · Tier-2",
+      "tag": "Low-literacy, trust-first",
+      "context": "First smartphone; weekend family dinners; speaks Kannada.",
+      "model": "Doesn't read policies; taps 'OK' to reach food faster.",
+      "attitude": "Trusts by default; needs protecting from rapid-tap habit.",
+      "risk": "Silent churn."
+    },
+    {
+      "name": "Ananya, 16 · Student",
+      "tag": "Digital-native minor (child user)",
+      "context": "Snacks after tuition; parent pays via UPI.",
+      "model": "Unaware her location + browsing is collected; guardian has no visibility.",
+      "attitude": "N/A — duty of protection is on the platform (S.9).",
+      "risk": "₹250 cr tier + guardian uninstall."
+    }
+  ],
+  "pain_points": [
+    "Consent fatigue — 4,000-word policy → abandon or blind-accept",
+    "Dark-pattern anxiety — pre-ticked box, 'agree to continue'",
+    "Vernacular gap — English-only excludes 60%+ users",
+    "No memory — can't recall or revoke consent",
+    "Parental blindspot — no mechanism for minors"
+  ],
+  "why": "For Priya, bad consent UX = switch. For Ramesh = silent churn. For Ananya's parent = uninstall + social post.",
+  "footer": "User · Segmentation · Pain points",
+  "notes": "Picture Priya tapping Accept All at 1:15 PM with a meeting in 5 minutes. Zero patience. Any friction = drop-off; any deception = trust erosion."
+}

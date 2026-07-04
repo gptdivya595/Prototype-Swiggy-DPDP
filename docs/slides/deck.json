@@ -1,0 +1,250 @@
+{
+  "presentation_metadata": {
+    "title": "Swiggy × DPDP Act 2023 — Product Thinking Deck",
+    "product": "Swiggy Consumer App",
+    "focus_area": "Onboarding & Consent Experience",
+    "author": "Product Manager — Data & Privacy",
+    "date": "2026-07-04",
+    "audience": "Executive Leadership, Legal, Engineering, Design",
+    "theme": "light",
+    "total_slides": 10,
+    "reference_format": "Discovery-Compass-Final-PM-Case.pptx (Spotify), rebuilt light-mode for Swiggy"
+  },
+  "design_system": {
+    "mode": "light",
+    "bg": "FFFFFF",
+    "band": "FC8019",
+    "ink": "18181B",
+    "muted": "52525B",
+    "hairline": "E4E4E7",
+    "surface": "FAFAFA",
+    "primary": "FC8019",
+    "primary_dark": "E0670A",
+    "green": "1BA672",
+    "green_bg": "E3F5EC",
+    "blue": "2563EB",
+    "blue_bg": "E5EEFB",
+    "red": "E4572E",
+    "red_bg": "FCE4DE",
+    "font_head": "Calibri",
+    "font_body": "Calibri"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "layout": "title-evidence",
+      "kicker": "SWIGGY · DPDP ACT 2023 · PRODUCT CASE",
+      "title": "Swiggy asks for all your data with one tap. DPDP says that consent is invalid.",
+      "subtitle": "Focus: the onboarding consent experience — the first legal touchpoint where personal-data collection is authorized.",
+      "problem": "Swiggy's onboarding bundles essential delivery data (phone, address) with optional behavioural data (location, marketing, analytics) behind a single 'Accept All'. DPDP Act, Section 6 requires consent that is free, specific, informed, unconditional and affirmative — bundling is none of these.",
+      "solution": "Swiggy SARAL: unbundled consent buckets, just-in-time micro-notices, a multilingual plain-language layer, an immutable Consent Ledger, and a children's-data gateway.",
+      "evidence_ledger": [
+        {"label": "Monthly active users", "value": "~24M+"},
+        {"label": "Max DPDP penalty", "value": "₹250 cr"},
+        {"label": "Value data transparency", "value": "~68% of digital natives"},
+        {"label": "Children's-data gate today", "value": "None (S.9 gap)"}
+      ],
+      "decision_ask": "Approve resourcing + Phase-1 A/B launch to make consent valid without breaking onboarding.",
+      "footer": "PM — Data & Privacy · 04 July 2026",
+      "notes": "Open with the regulatory countdown. This is a product-architecture problem, not a legal checkbox. Bundled consent is a ticking time bomb for both trust and law."
+    },
+    {
+      "n": 2,
+      "layout": "personas",
+      "kicker": "THE USER",
+      "title": "Three people, one broken consent moment",
+      "subtitle": "The person whose data is at stake — and why the current flow fails each of them.",
+      "personas": [
+        {"name": "Priya, 28 · Bangalore", "tag": "Privacy-conscious urban diner", "context": "Lunch 3×/week; Instamart on weekends.", "model": "Gets that Swiggy needs address + phone. Doesn't get why it tracks location when closed, or sends Dineout emails after biryani.", "attitude": "Shares for clear value; hates dark patterns.", "risk": "Churns to Zomato."},
+        {"name": "Ramesh, 42 · Tier-2", "tag": "Low-literacy, trust-first", "context": "First smartphone; weekend family dinners; speaks Kannada.", "model": "Doesn't read policies; taps 'OK' to reach food faster.", "attitude": "Trusts by default; needs protecting from rapid-tap habit.", "risk": "Silent churn."},
+        {"name": "Ananya, 16 · Student", "tag": "Digital-native minor (child user)", "context": "Snacks after tuition; parent pays via UPI.", "model": "Unaware her location + browsing is collected; guardian has no visibility.", "attitude": "N/A — duty of protection is on the platform (S.9).", "risk": "₹250 cr tier + guardian uninstall."}
+      ],
+      "pain_points": [
+        "Consent fatigue — 4,000-word policy → abandon or blind-accept",
+        "Dark-pattern anxiety — pre-ticked box, 'agree to continue'",
+        "Vernacular gap — English-only excludes 60%+ users",
+        "No memory — can't recall or revoke consent",
+        "Parental blindspot — no mechanism for minors"
+      ],
+      "why": "For Priya, bad consent UX = switch. For Ramesh = silent churn. For Ananya's parent = uninstall + social post.",
+      "footer": "User · Segmentation · Pain points",
+      "notes": "Picture Priya tapping Accept All at 1:15 PM with a meeting in 5 minutes. Zero patience. Any friction = drop-off; any deception = trust erosion."
+    },
+    {
+      "n": 3,
+      "layout": "journey-gaps",
+      "kicker": "CURRENT EXPERIENCE",
+      "title": "The 'wall of text' onboarding breaks the law before the first order",
+      "subtitle": "How Swiggy collects data today (stated assumptions) and where it fails DPDP.",
+      "diagram": "user-journey.png",
+      "diagram_alt": "Current bundled onboarding loop vs the SARAL progressive-consent intervention.",
+      "gaps": [
+        {"p": "Free & unconditional (S.6)", "s": "Can't proceed without accepting all", "sev": "Critical"},
+        {"p": "Specific & informed (S.6)", "s": "One statement covers 12+ activities", "sev": "Critical"},
+        {"p": "Children's data (S.9)", "s": "No age gate, no parental flow", "sev": "Critical"},
+        {"p": "Affirmative action (S.6)", "s": "Pre-ticked marketing box", "sev": "High"},
+        {"p": "Purpose limitation (S.5)", "s": "OTP phone reused for marketing", "sev": "High"},
+        {"p": "Right to withdraw (S.7)", "s": "Email-only, no in-app control", "sev": "High"},
+        {"p": "Data minimisation (S.4)", "s": "24/7 background location", "sev": "Medium"}
+      ],
+      "risks": ["Legal: DPB show-cause on enforcement", "Conversion: ~18% drop at Terms wall (Tier-2/3)", "Trust: privacy = #2 complaint (Swiggy One)", "Competitive: Zomato piloting granular toggles"],
+      "footer": "Current state → gap analysis",
+      "notes": "Pause at the bundled wall — that's where we lose users and break the law. Background location starts before any order."
+    },
+    {
+      "n": 4,
+      "layout": "solution",
+      "kicker": "PROPOSED SOLUTION",
+      "title": "Swiggy SARAL — consent as a product feature, not a legal tax",
+      "subtitle": "Simple · Accessible · Rational · Actionable · Legal. From all-or-nothing to just-in-time, just-enough, just-for-now.",
+      "diagram": "consent-architecture.png",
+      "diagram_alt": "Age gate → unbundled buckets → JIT notices → multilingual layer → Consent Manager → Kafka → immutable Ledger → Audit API.",
+      "pillars": [
+        {"h": "1 · Unbundled buckets", "d": "Essential (inline, no opt-out) vs Optional (granular, un-ticked toggles)."},
+        {"h": "2 · Just-in-time notices", "d": "Ask at the moment of need + value exchange (₹50 off for WhatsApp alerts)."},
+        {"h": "3 · Multilingual plain-language", "d": "12 languages, 8th-grade reading level, icon per data category."},
+        {"h": "4 · Consent Ledger", "d": "Immutable signed log; DPB-auditable in <2 min. Kafka → WORM → Audit API."},
+        {"h": "5 · Children's gateway", "d": "Age gate → Guardian Consent Mode; child account runs data-minimal."}
+      ],
+      "alternatives": [
+        {"a": "Single-page granular checklist at signup", "r": "~18% drop-off; violates low-patience context"},
+        {"a": "Post-first-order consent prompt", "r": "Loses new-user personalization window"},
+        {"a": "OS permissions only", "r": "Fails DPDP purpose-specific notice"},
+        {"a": "Third-party consent plug-in", "r": "Vendor lock-in; weak vernacular UX"}
+      ],
+      "footer": "Solution architecture",
+      "notes": "SARAL re-architects how Swiggy treats user autonomy. Ledger = insurance. JIT = conversion strategy. Children's gateway = legal shield."
+    },
+    {
+      "n": 5,
+      "layout": "metrics",
+      "kicker": "METRICS & SUCCESS CRITERIA",
+      "title": "One North Star that fuses compliance, conversion and trust",
+      "subtitle": "Valid Consent Coverage Rate — high VCCR means legally protected AND users aren't bouncing.",
+      "diagram": "kpi-tree.png",
+      "diagram_alt": "VCCR North Star broken into Valid, Granular, Reach, Trust drivers with guardrails and lagging outcome.",
+      "north_star": {"name": "Valid Consent Coverage Rate (VCCR)", "def": "% of MAU with explicit, granular, unbundled, ledger-verified consent for every active processing purpose.", "target": "≥95% within 90 days"},
+      "supporting": [
+        {"m": "Day-1 onboarding completion", "b": "72%", "t": "≥70% (≤2.8pp drop)"},
+        {"m": "Marketing opt-in (post-JIT)", "b": "100% bundled", "t": "≥45% in 60 days"},
+        {"m": "Consent revocation completion", "b": "n/a (email only)", "t": "≥90% · median <45s"}
+      ],
+      "guardrails": [
+        {"m": "Privacy support tickets", "t": "≤1.5× baseline"},
+        {"m": "Ledger sync latency (p99)", "t": "<500ms"}
+      ],
+      "success": ["Compliance: zero audit findings; passes DPB mock audit", "Trust: Privacy NPS +10 pts", "Business: onboarding within 3pp; opt-in >40%", "Ops: 100% real-time ledger sync, zero data loss / 30d"],
+      "footer": "KPI framework",
+      "notes": "VCCR is the only metric combining legal safety with engagement. High VCCR but onboarding drops → tighten JIT timing. Low VCCR but onboarding fine → compliance leak."
+    },
+    {
+      "n": 6,
+      "layout": "diagnostic",
+      "kicker": "DIAGNOSTIC THINKING",
+      "title": "If VCCR drops 15% with no release — a forensic, not a panic",
+      "subtitle": "Scenario: 3 weeks post-launch VCCR falls 92% → 77%. No release, campaign, or outage.",
+      "diagram": "hypothesis-tree.png",
+      "diagram_alt": "Four-branch hypothesis tree: UX regression, cohort shift, backend data drift, external trigger.",
+      "analysis_plan": [
+        "Segment drop by platform / app version / OS → isolate iOS-only vs version bug",
+        "Funnel drop-off by consent category → marketing-only (JIT) vs uniform (cohort/external)",
+        "Ledger event volume vs app analytics volume → backend data loss",
+        "Correlate with acquisition source / campaign ID → cohort shift",
+        "Social listening 'Swiggy + privacy' → external trigger",
+        "Session recordings at consent screens → rage-click / UX confusion"
+      ],
+      "root_cause": "Five-Whys + cohort isolation. Example: opt-in fell → JIT fires at checkout → address event mis-mapped to checkout in v8.4.2 → release regression in trigger logic.",
+      "next_steps": ["0-24h: freeze rollout if <80%, verify pipeline, alert legal", "1-7d: A/B JIT timing, hotfix regression, in-app survey", "7-30d: re-engage incomplete consent, fix micro-copy, transparency post"],
+      "footer": "Hypothesis tree + recovery playbook",
+      "notes": "The hypothesis tree prevents panic; the analysis plan is a forensic checklist. Key: is it a UX bug, a backend leak, or a market shift?"
+    },
+    {
+      "n": 7,
+      "layout": "dashboard",
+      "kicker": "DASHBOARD",
+      "title": "Consent Health Command Center",
+      "subtitle": "Real-time monitoring of compliance, conversion and trust (mock data, 30-sec rollup).",
+      "main_kpi": {"metric": "VCCR", "value": "77.0%", "target": "95.0%", "trend": "↓ 15.0pp vs 3 weeks ago", "status": "Below target"},
+      "tiles": [
+        {"m": "Day-1 onboarding", "v": "55.0%", "sub": "baseline 72% · ↓17pp", "status": "critical"},
+        {"m": "Marketing opt-in (JIT)", "v": "53.0%", "sub": "target 45% · ↑8pp", "status": "healthy"},
+        {"m": "Ledger sync p99", "v": "320ms", "sub": "threshold 500ms", "status": "healthy"},
+        {"m": "Privacy tickets / wk", "v": "1,240", "sub": "baseline 800 · ↑55%", "status": "critical"}
+      ],
+      "sparkline_ref": "VCCR 30-day series in root JSON (slide 7)",
+      "segmentation": [
+        {"seg": "iOS / Metro / New (Jun)", "vccr": "68%", "onb": "48%", "opt": "58%", "note": "Highest drop; iOS 18 ATT suspected"},
+        {"seg": "Android / Metro / New", "vccr": "82%", "onb": "62%", "opt": "52%", "note": "Within guardrail"},
+        {"seg": "Android / Tier-2 / All", "vccr": "79%", "onb": "58%", "opt": "44%", "note": "Vernacular copy tests needed"},
+        {"seg": "iOS / Tier-1 / Returning", "vccr": "94%", "onb": "n/a", "opt": "61%", "note": "Re-consent successful"},
+        {"seg": "Guardian / Under-18", "vccr": "45%", "onb": "35%", "opt": "12%", "note": "Parental OTP friction high"}
+      ],
+      "alerts": ["VCCR <80% >2h → P0 auto-freeze + page SRE + notify Legal", "Onboarding <60% >6h → P1 fallback simplified flow", "Ledger p99 >500ms >10m → P1 Kafka lag", "Privacy tickets >1.5× 3d → P2 copy review"],
+      "footer": "Health dashboard · mock data",
+      "notes": "This dashboard is the war room. Segmentation isolates patient-zero. Under-18 is the biggest blind spot."
+    },
+    {
+      "n": 8,
+      "layout": "rollout",
+      "kicker": "ROLLOUT PLAN",
+      "title": "Phased, validated, reversible — and we never A/B-test illegality",
+      "subtitle": "From legal foundation to full rollout with hard gates at each phase.",
+      "diagram": "rollout-timeline.png",
+      "diagram_alt": "Four phases over 14 weeks with go/no-go gates leading to compliant, audit-ready state.",
+      "ab": {
+        "testable": ["JIT prompt timing", "Toggle UI pattern", "Incentive framing", "Vernacular variants (formal vs colloquial)"],
+        "non_testable": ["Essential-data notice (legally mandated)", "Children's age gate", "Consent Ledger logging"],
+        "handling": "For mandatory elements run 'compliance shadow tests': new notice to 100% of a cohort vs a holdback that sees the OLD compliant notice — never a non-compliant one."
+      },
+      "validation": ["Quant: funnel, cohort retention, VCCR trend", "Qual: moderated tests in Hindi/Tamil/Kannada", "Legal: external DPDP mock audit every 2 weeks", "Tech: chaos test Ledger (Kafka outage → fallback queue)"],
+      "footer": "Timeline + experimentation",
+      "notes": "Phase 1 is make-or-break. We test HOW to make compliance delightful, never WHETHER compliance is needed. The non-testable list is our red line."
+    },
+    {
+      "n": 9,
+      "layout": "risks",
+      "kicker": "RISKS & TRADE-OFFS",
+      "title": "Honest accounting of what we trade for compliance",
+      "subtitle": "We know conversion will hurt and legacy data is messy — the cost of inaction is existential.",
+      "risks": [
+        {"c": "Engineering complexity", "i": "High", "p": "Certain", "t": "Accept 3-wk backend extension vs lifetime liability", "m": "Managed Kafka + WORM S3; 2 senior eng / 8 wks; in-memory fallback"},
+        {"c": "Business (conversion)", "i": "High", "p": "Likely", "t": "6 mo lower ad revenue for defensible model", "m": "JIT incentives; first-party personalization; re-engage opt-ins"},
+        {"c": "User friction (Tier-2/3)", "i": "Medium", "p": "Likely", "t": "Small top-funnel loss for trust + retention", "m": "Progressive disclosure; <30s consent; Quick-Start auto-deny"},
+        {"c": "Edge: declines all optional", "i": "Medium", "p": "Certain (some %)", "t": "Higher eng cost for privacy mode", "m": "Minimal mode: manual address, no marketing, aggregated analytics, blocked sharing"},
+        {"c": "Edge: non-cooperative guardian", "i": "Low", "p": "Possible", "t": "Lose some under-18 volume vs S.9 penalty", "m": "Limited-access order, zero retention, parent education"},
+        {"c": "Edge: legacy data backfill", "i": "High", "p": "Certain", "t": "Temp. data-richness loss to cleanse liability", "m": "'Trust Refresh' re-consent; purge >12mo profiles; document legitimate use"}
+      ],
+      "heatmap": [
+        {"q": "High prob · High impact", "items": "Conversion loss · Legacy backfill"},
+        {"q": "High prob · Med impact", "items": "Eng complexity · Tier-2/3 friction"},
+        {"q": "Med prob · Med impact", "items": "Guardian refusal"},
+        {"q": "Low prob · Low impact", "items": "Competitor first-mover"}
+      ],
+      "footer": "Risk matrix",
+      "notes": "This is where we prove we're not naive. Conversion will hurt, engineering is hard, legacy is a mess — trade-offs are worth it because the alternative is regulatory shutdown of data ops."
+    },
+    {
+      "n": 10,
+      "layout": "cta",
+      "kicker": "CONCLUSION",
+      "title": "Privacy as a product, not a penalty",
+      "subtitle": "SARAL turns DPDP compliance into a competitive advantage — legal safety, business growth, user trust, at once.",
+      "pillars": [
+        {"h": "Legal safety", "d": "Zero bundled consent · verifiable ledger · parental gateway · audit-ready <2 min"},
+        {"h": "Business growth", "d": "Core onboarding unblocked · opt-in recovered via JIT · premium trust positioning"},
+        {"h": "User trust", "d": "Plain-language multilingual notices · one-tap revocation · transparent usage"}
+      ],
+      "decision_ask": "Approve today: (1) 2 senior backend eng + 1 designer + 1 legal PM for 12 weeks; (2) ₹45 lakh for translation, audit & managed infra; (3) Go for Phase-1 A/B on 20 July 2026.",
+      "next_steps": [
+        {"o": "Product", "a": "PRD for Consent Ledger + JIT trigger logic", "d": "10 Jul"},
+        {"o": "Engineering", "a": "Staging for SARAL backend + variants", "d": "17 Jul"},
+        {"o": "Legal", "a": "Complete DPIA → DPO sign-off", "d": "15 Jul"},
+        {"o": "Design", "a": "Hi-fi prototypes + vernacular copy", "d": "12 Jul"},
+        {"o": "Growth", "a": "Incentive framework for JIT opt-in", "d": "14 Jul"}
+      ],
+      "closing": "DPDP isn't a deadline to fear — it's a blueprint for the most trusted food-tech platform in India. Our users' data belongs to them; their trust belongs to us.",
+      "footer": "Call to action",
+      "notes": "End with energy. The ask is specific: people, money, a date. Privacy is not a cost center — it is the product."
+    }
+  ]
+}
